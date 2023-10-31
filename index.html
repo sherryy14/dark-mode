@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ****navbar**** -->
+    <div class="hero">
+        <nav>
+            <img src="logoo.png" class="logo">
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT</a></li>
+                <li><a href="">CONTACT</a></li>
+                <li><a href="">BLOG</a></li>
+                <li><a href="">SHOP</a></li>
+            </ul>
+            <img src="moon.png" id="icon" alt="">
+        </nav>
+        <!-- *********content*********************** -->
+        <div class="info">
+            <h1>FLAT <span>50%</span> OFF</h1>
+            <p>Great deals for winters Huury up and get your atire now! </p>
+            <a href="">Shop now</a>
+        </div>
+        <!--image-->
+        <div class="img-box">
+            <img src="pattern.png" alt="">
+            <img src="girl.png" alt="">
+
+        </div>
+
+
+    </div>
+
+    <script>
+        var icon = document.getElementById("icon");
+        icon.onclick = function () {
+            if (localStorage.getItem('theme') == 'dark-theme') {
+                localStorage.removeItem('theme')
+            } else {
+                localStorage.setItem('theme', 'dark-theme');
+            }
+            document.body.classList.toggle("dark-theme")
+            location.reload();
+        }
+
+        if (localStorage.getItem('theme') == 'dark-theme') {
+            document.getElementById("icon").src = 'sun.png'
+        } else {
+            document.getElementById("icon").src = 'moon.png'
+        }
+
+        if (localStorage.getItem('theme') == 'dark-theme') {
+            document.body.classList.add("dark-theme")
+        } else {
+            document.body.classList.remove("dark-theme")
+        }
+    </script>
+
+
+</body>
+
+</html>
